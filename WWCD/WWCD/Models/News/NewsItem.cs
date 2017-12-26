@@ -1,5 +1,6 @@
 ﻿using System;
 using Newtonsoft.Json;
+using Xamarin.Forms;
 
 namespace WWCD.Models.News
 {
@@ -21,6 +22,8 @@ namespace WWCD.Models.News
         public string Description { get; set; }
 
         public string Url => $"https://www.playbattlegrounds.com/news/{Id}.pu";
+
+        public ImageSource Thumbnail => new Uri(ThumbnailUrl);
 
         [JsonProperty("simpleVisibleDate")]
         public DateTime Date { get; set; }

@@ -4,7 +4,7 @@
              xmlns:local="clr-namespace:WWCD"
              xmlns:vm="clr-namespace:WWCD.ViewModels"
              x:Class="WWCD.MainPage"
-             Title="Main">
+             Title="PUBG News">
     <ContentPage.BindingContext>
         <vm:NewsPageViewModel />
     </ContentPage.BindingContext>
@@ -13,8 +13,9 @@
               HorizontalOptions="Center">
         <ListView.ItemTemplate>
             <DataTemplate>
-                <TextCell Text="{Binding Title}" 
-                          Detail="{Binding Description}" />
+                <ImageCell ImageSource="{Binding Thumbnail}"
+                           Text="{Binding Title}" 
+                           Detail="{Binding Description}" />
             </DataTemplate>
         </ListView.ItemTemplate>
         <ListView.Footer>
