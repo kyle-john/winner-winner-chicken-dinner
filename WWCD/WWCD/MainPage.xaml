@@ -8,7 +8,8 @@
     <ContentPage.BindingContext>
         <vm:NewsPageViewModel />
     </ContentPage.BindingContext>
-	<ListView ItemsSource="{Binding News}"
+	<ListView x:Name="listview"
+              ItemsSource="{Binding News}"
               VerticalOptions="Center" 
               HorizontalOptions="Center">
         <ListView.ItemTemplate>
