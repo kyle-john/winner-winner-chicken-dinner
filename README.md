@@ -1,4 +1,5 @@
 # Winner Winner Chicken Dinner
+![image](preview.png)
 
 ## PUBG news
 https://www.playbattlegrounds.com/news.pu
