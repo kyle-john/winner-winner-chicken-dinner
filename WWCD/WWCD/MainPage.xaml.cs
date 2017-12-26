@@ -13,5 +13,12 @@ namespace WWCD
 		{
 			InitializeComponent();
 		}
-	}
+
+        protected override void OnAppearing()
+        {
+            base.OnAppearing();
+
+            MessagingCenter.Send(this, "MainPageIsAppearing");
+        }
+    }
 }

@@ -1,11 +1,25 @@
-﻿<?xml version="1.0" encoding="utf-8" ?>
+<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:local="clr-namespace:WWCD"
-             x:Class="WWCD.MainPage">
-
-	<Label Text="Welcome to Xamarin.Forms!" 
-           VerticalOptions="Center" 
-           HorizontalOptions="Center" />
-
+             xmlns:vm="clr-namespace:WWCD.ViewModels"
+             x:Class="WWCD.MainPage"
+             Title="Main">
+    <ContentPage.BindingContext>
+        <vm:NewsPageViewModel />
+    </ContentPage.BindingContext>
+	<ListView ItemsSource="{Binding News}"
+              VerticalOptions="Center" 
+              HorizontalOptions="Center">
+        <ListView.ItemTemplate>
+            <DataTemplate>
+                <TextCell Text="{Binding Title}" 
+                          Detail="{Binding Description}" />
+            </DataTemplate>
+        </ListView.ItemTemplate>
+        <ListView.Footer>
+            <Button Text="Load more..."
+                    Command="{Binding LoadCommand}" />
+        </ListView.Footer>
+    </ListView>
 </ContentPage>
